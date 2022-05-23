@@ -1,0 +1,19 @@
+.body {
+    margin: 20px;
+}
+.title {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.cards {
+    display: flex;
+    gap: 22px;
+}
+.card {
+    background: #48d0b0;
+    height: 100px;
+    width: 50%;
+    border-radius: 12px;
+}
