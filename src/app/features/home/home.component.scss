@@ -1,19 +1,82 @@
 .body {
     margin: 20px;
+    position: relative;
 }
 .title {
     font-size: 25px;
-    font-family: "Roboto", sans-serif;
     font-weight: bold;
     letter-spacing: 0.5px;
 }
 .cards {
     display: flex;
     gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 .card {
+    position: relative;
     background: #48d0b0;
-    height: 100px;
-    width: 50%;
+    height: 120px;
+    width: 156px;
     border-radius: 12px;
+    overflow: hidden;
+}
+.pokemon-img {
+    width: 60px;
+    position: absolute;
+    right: 3px;
+    bottom: 8px;
+}
+.imagens {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.pokebola-img {
+    width: 171px;
+    position: absolute;
+    right: -53px;
+    bottom: -19px;
+    opacity: 30%;
+    filter: brightness(4);
+}
+.pokebola-bg {
+    width: 538px;
+    position: fixed;
+    right: -267px;
+    top: -96px;
+    filter: brightness(3);
+}
+.numero {
+    text-align: right;
+    color: #767676;
+    opacity: 80%;
+    font-size: 14px;
+}
+.nome {  
+    color: #f1f1f1;
+    font-weight: 500;
+    letter-spacing: 1px;   
+}
+.grid-text {
+    display: grid;
+    grid-template-rows: 18px 32px 1fr;
+    width: 87%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    padding: 5px 5px 5px 10px;
+}
+.tipos {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.tipo {
+    color: #f1f1f1;
+    font-size: 13px;
+    background: #f1f1f147;
+    border-radius: 14px;
+    width: max-content;
+    padding: 3.5px 10px;
 }
