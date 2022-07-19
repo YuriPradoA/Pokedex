@@ -1,63 +1,67 @@
-<div class="body">
+<div class="body" [ngClass]="{'blur':loading==true}">
     <img src="assets/imagens/pokeball.png" class="pokebola-bg">
     <div class="title">Pokedex</div>
     <div class="cards">
-        <div class="card">
+        <div class="card" [ngClass]="pokemon.types[0].type.name" *ngFor="let pokemon of pokemonList" (click)="openPokemon()">
             <div class="imagens">
                 <img src="assets/imagens/pokeball.png" class="pokebola-img">
-                <img src="assets/imagens/bulba.png" class="pokemon-img">                
-            </div> 
+                <img [src]="pokemon.sprites.other.dream_world.front_default" class="pokemon-img">
+            </div>
             <div class="grid-text">
-                <div class="numero">#001</div>
-                <div class="nome">Bulbasaur</div>
-                <div class="tipos">
-                    <div class="tipo">Grass</div>
-                    <div class="tipo">Poison</div>   
+                <div class="numero">#{{pokemon.id}}</div>
+                <div class="nome">{{pokemon.name}}</div>
+                <div class="tipos" *ngFor="let type of pokemon.types">
+                    <div class="tipo">{{type.type.name}}</div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="imagens">
-                <img src="assets/imagens/pokeball.png" class="pokebola-img">
-                <img src="assets/imagens/bulba.png" class="pokemon-img">                
-            </div> 
-            <div class="grid-text">
-                <div class="numero">#001</div>
-                <div class="nome">Bulbasaur</div>
-                <div class="tipos">
-                    <div class="tipo">Grass</div>
-                    <div class="tipo">Poison</div>   
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="imagens">
-                <img src="assets/imagens/pokeball.png" class="pokebola-img">
-                <img src="assets/imagens/bulba.png" class="pokemon-img">                
-            </div> 
-            <div class="grid-text">
-                <div class="numero">#001</div>
-                <div class="nome">Bulbasaur</div>
-                <div class="tipos">
-                    <div class="tipo">Grass</div>
-                    <div class="tipo">Poison</div>   
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="imagens">
-                <img src="assets/imagens/pokeball.png" class="pokebola-img">
-                <img src="assets/imagens/bulba.png" class="pokemon-img">                
-            </div> 
-            <div class="grid-text">
-                <div class="numero">#001</div>
-                <div class="nome">Bulbasaur</div>
-                <div class="tipos">
-                    <div class="tipo">Grass</div>
-                    <div class="tipo">Poison</div>   
-                </div>
-            </div>
-        </div>
-
     </div>
+</div>
+
+<div class="loading" *ngIf="loading==true">
+    <img src="assets/imagens/loading.gif">
+</div>
+
+<div class="modal" *ngIf="modal==true">
+    <div (click)="modal=false">teste</div>
+    <img src="assets/imagens/pokeball.png" class="pokebola-imgmodal">
+    <img src="assets/imagens/returnarrow.png" class="arrow">
+    <img src="assets/imagens/bulba.png" class="pokemon-modal">
+        <div class="modalbaixo">
+            <div class="header-modal">
+                <div>About</div>
+                <div>Base Stats</div>
+                <div>Evolution</div>
+                <div>Moves</div>
+                
+            </div>
+            <div class="body-modal">
+                <div class="body-modal-descri">
+                    <div class="coluna1">
+                        <div>Species</div>
+                        <div>Height</div>
+                        <div>Weight</div>
+                        <div>Abilities</div>
+                    </div>
+                    <div class="coluna2">
+                        <div>Seed</div>
+                        <div>2'3.6" (0.70cm)</div>
+                        <div>15.2lbs (6.9kg)</div>
+                        <div>Overgrow, Chlorophyl</div>
+                    </div>
+                </div>
+                <div class="sub-body-modal">Breeding</div>
+                <div class="sub-body-modal-descri">
+                    <div class="coluna1">
+                        <div>Gender</div>
+                        <div>Egg Groups</div>
+                        <div>Egg Cycle</div>
+                    </div>
+                    <div class="coluna2">
+                        <div>87.5%</div>
+                        <div>Monster</div>
+                        <div>Grass</div>
+                    </div>
+                    <div class="coluna2">12.5%</div>
+            </div>
 </div>
